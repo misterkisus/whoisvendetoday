@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ВЕНДЕЙКА</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 class="title">ВЕНДЕЙКА</h1>
+  <p class="subtitle">ЕШЬ ГАВНО ЧТОБЫ ВЫЖИТЬ</p>
+  <div class="score">СЧЕТ: <span id="score">0</span></div>
+  <canvas id="gameCanvas" width="600" height="600"></canvas>
+  <div id="gameOver" class="game-over hidden">
+    <p>ТЫ ПЕРЕПУТАЛ СЕБЯ С ГАВНОМ И СДОХ</p>
+    <p>ТВОЙ СЧЕТ: <span id="finalScore">0</span></p>
+    <button id="restartBtn">НАЧАТЬ ЗАНОВО</button>
+  </div>
+  <script src="snake.js"></script>
+</body>
+</html>
