@@ -91,6 +91,26 @@ function savePhrase(phrase) {
     changeBackgroundImage();
   }
 });
+
+function handleClick(event) {
+    if (generateButton.disabled) {
+      showNotification();
+    } else {
+        const phrases = ['казел', 'казлина', 'говнюк', 'пидарас', 'пидарасина', 'говноед', 'хуеглот', 'еще не сдох к сожалению', 'сдох наконец то', 'уебан', 'уебище', 'тварь', 'полное чмо'];
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+      const heading = document.querySelector('h1');
+      heading.innerHTML = `Венде сегодня ${randomPhrase}`;
+      animateText(heading);
+      disableButton();
+      savePhrase(heading.innerHTML);
+      changeBackgroundImage();
+    }
+  }
+
+  generateButton.addEventListener('touchstart', handleClick);
+  generateButton.addEventListener('mousedown', handleClick);
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const nextClickTime = localStorage.getItem('nextClickTime');
   const now = new Date().getTime();
