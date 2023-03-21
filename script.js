@@ -44,7 +44,7 @@ function disableButton() {
 function enableButton() {
   generateButton.disabled = false;
   generateButton.style.opacity = 1;
-  generateButton.innerHTML = 'Кто сегодня Ваня';
+  generateButton.innerHTML = 'Кто сегодня Венде';
 }
 
 function savePhrase(phrase) {
