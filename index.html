@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кто сегодня Венде</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вендейка</title>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #gameTitle {
+      font-size: 3rem;
+      background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    #gameCanvas {
+      border: 1px solid black;
+      display: block;
+    }
+
+    .arrow-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .arrow-buttons button {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      background-color: #ccc;
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Кто сегодня Венде</h1>
-        <button id="generateButton">Кто сегодня Венде</button>
-        <p id="result"></p>
+  <h1 id="gameTitle">Вендейка</h1>
+  <p>Ешь дерьмо чтобы выжить</p>
+  <canvas id="gameCanvas" width="800" height="800"></canvas>
+  <div class="arrow-buttons">
+    <button id="upArrow">↑</button>
+    <div>
+      <button id="leftArrow">←</button>
+      <button id="rightArrow">→</button>
     </div>
-    <script src="script.js"></script>
+    <button id="downArrow">↓</button>
+  </div>
+  <script src="snakeGame.js"></script>
 </body>
 </html>
