@@ -41,11 +41,19 @@
       cursor: pointer;
       margin: 0.5rem;
     }
+    #scoreContainer {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
   </style>
 </head>
 <body>
   <h1 id="gameTitle">Вендейка</h1>
   <p>Ешь дерьмо чтобы выжить</p>
+  <div id="scoreContainer">
+    <span>Очки:</span>
+    <span id="score">0</span>
+  </div>
   <canvas id="gameCanvas" width="800" height="800"></canvas>
   <div class="arrow-buttons">
     <button id="upArrow">↑</button>

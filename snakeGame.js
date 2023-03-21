@@ -9,6 +9,7 @@ foodImage.src = 'foodimage.png';
 
 let snake = [{x: gridSize * 2, y: gridSize * 2}];
 let food = {x: 0, y: 0};
+let score = 0;
 let speed = {x: 1, y: 0};
 
 document.addEventListener('keydown', moveSnake);
@@ -60,8 +61,12 @@ function drawGame() {
   if (snake[0].x === food.x && snake[0].y === food.y) {
     generateFood();
     snake.push({x: snake[snake.length - 1].x, y: snake[snake.length - 1].y});
+    score++; // Увеличиваем счёт
+    document.getElementById('score').textContent = score; // Обновляем счётчик очков на странице
   }
 }
+
+
 
 function generateFood() {
   let isValidPosition;
