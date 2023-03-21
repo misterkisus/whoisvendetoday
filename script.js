@@ -77,12 +77,10 @@ function savePhrase(phrase) {
     }, 3000);
   }
 
-  generateButton.addEventListener('click', function () {
+  generateButton.addEventListener('pointerdown', function (event) {
     if (generateButton.disabled) {
       showNotification();
-      return;
-    }
-
+    } else {
     const phrases = ['казел', 'казлина', 'говнюк', 'пидарас', 'пидарасина', 'говноед', 'хуеглот', 'еще не сдох к сожалению', 'сдох наконец то', 'уебан', 'уебище', 'тварь', 'полное чмо'];
     const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
     const heading = document.querySelector('h1');
@@ -91,8 +89,8 @@ function savePhrase(phrase) {
     disableButton();
     savePhrase(heading.innerHTML);
     changeBackgroundImage();
-  });
-
+  }
+});
 document.addEventListener('DOMContentLoaded', function () {
   const nextClickTime = localStorage.getItem('nextClickTime');
   const now = new Date().getTime();
