@@ -26,6 +26,53 @@ let score = 0;
 let gameOver = false;
 let interval;
 
+// Add this function to handle touch events
+function handleTouchStart(e) {
+  e.preventDefault();
+  const touch = e.touches[0];
+  this.startX = touch.clientX;
+  this.startY = touch.clientY;
+}
+
+function handleTouchMove(e) {
+  e.preventDefault();
+  if (!this.startX || !this.startY) {
+    return;
+  }
+
+  const touch = e.touches[0];
+  const diffX = this.startX - touch.clientX;
+  const diffY = this.startY - touch.clientY;
+
+  if (Math.abs(diffX) > Math.abs(diffY)) {
+    // Horizontal swipe
+    if (diffX > 0 && direction.x === 0) {
+      // Swipe left
+      direction = { x: -20, y: 0 };
+    } else if (diffX < 0 && direction.x === 0) {
+      // Swipe right
+      direction = { x: 20, y: 0 };
+    }
+  } else {
+    // Vertical swipe
+    if (diffY > 0 && direction.y === 0) {
+      // Swipe up
+      direction = { x: 0, y: -20 };
+    } else if (diffY < 0 && direction.y === 0) {
+      // Swipe down
+      direction = { x: 0, y: 20 };
+    }
+  }
+
+  this.startX = null;
+  this.startY = null;
+}
+
+// Add event listeners for touch events
+canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+canvas.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+
 
 
 function startGame() {
