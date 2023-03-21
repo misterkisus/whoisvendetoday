@@ -4,7 +4,7 @@ const gridSize = 50;
 const tileCount = canvas.width / gridSize;
 let snakeImage = new Image();
 let foodImage = new Image();
-snakeImage.src = 'snakeImage.jpg';
+snakeImage.src = 'snakeimage.jpg';
 foodImage.src = 'foodimage.png';
 
 let snake = [{x: gridSize * 2, y: gridSize * 2}];
