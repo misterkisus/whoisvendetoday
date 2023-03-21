@@ -3,66 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вендейка</title>
-
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: Arial, sans-serif;
-    }
-
-    #gameTitle {
-      font-size: 3rem;
-      background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 1rem;
-    }
-
-    #gameCanvas {
-      border: 1px solid black;
-      display: block;
-    }
-
-    .arrow-buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 1rem;
-    }
-
-    .arrow-buttons button {
-      width: 50px;
-      height: 50px;
-      border: 1px solid black;
-      background-color: #ccc;
-      cursor: pointer;
-      margin: 0.5rem;
-    }
-    #scoreContainer {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-  </style>
+  <title>ВЕНДЕЙКА</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1 id="gameTitle">Вендейка</h1>
-  <p>Ешь дерьмо чтобы выжить</p>
-  <div id="scoreContainer">
-    <span>Очки:</span>
-    <span id="score">0</span>
+  <h1 class="title">ВЕНДЕЙКА</h1>
+  <p class="subtitle">ЕШЬ ГАВНО ЧТОБЫ ВЫЖИТЬ</p>
+  <div class="score">СЧЕТ: <span id="score">0</span></div>
+  <canvas id="gameCanvas" width="600" height="600"></canvas>
+  <div id="gameOver" class="game-over hidden">
+    <p>ТЫ ПЕРЕПУТАЛ СЕБЯ С ГАВНОМ И СДОХ</p>
+    <p>ТВОЙ СЧЕТ: <span id="finalScore">0</span></p>
+    <button id="restartBtn">НАЧАТЬ ЗАНОВО</button>
   </div>
-  <canvas id="gameCanvas" width="800" height="800"></canvas>
-  <div class="arrow-buttons">
-    <button id="upArrow">↑</button>
-    <div>
-      <button id="leftArrow">←</button>
-      <button id="rightArrow">→</button>
-    </div>
-    <button id="downArrow">↓</button>
-  </div>
-  <script src="snakeGame.js"></script>
+  <script src="snake.js"></script>
 </body>
 </html>
