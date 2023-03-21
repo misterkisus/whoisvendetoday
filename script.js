@@ -59,11 +59,34 @@ function savePhrase(phrase) {
     document.body.style.backgroundImage = "url('https://i.ibb.co/qr5TQT9/photo-2022-02-17-20-35-03-2.jpg')";
   }
 
+  function showNotification() {
+    const notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.textContent = 'Ты че, подождать не можешь?';
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+      notification.classList.add('show');
+    }, 50);
+
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => {
+        document.body.removeChild(notification);
+      }, 500);
+    }, 3000);
+  }
+
   generateButton.addEventListener('click', function () {
-    const phrases = ['казел', 'казлина', 'говнюк'];
+    if (generateButton.disabled) {
+      showNotification();
+      return;
+    }
+
+    const phrases = ['казел', 'казлина', 'говнюк', 'пидарас', 'пидарасина', 'говноед', 'хуеглот', 'еще не сдох к сожалению', 'сдох наконец то', 'уебан', 'уебище', 'тварь', 'полное чмо'];
     const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
     const heading = document.querySelector('h1');
-    heading.innerHTML = `Ваня сегодня ${randomPhrase}`;
+    heading.innerHTML = `Венде сегодня ${randomPhrase}`;
     animateText(heading);
     disableButton();
     savePhrase(heading.innerHTML);
