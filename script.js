@@ -56,7 +56,7 @@ function savePhrase(phrase) {
   }
 
   generateButton.addEventListener('click', function () {
-  const phrases = ['казел', 'казлина', 'говнюк', "пидарас", "тварь", "дерьмоед", "уебан", "тупень", "эммм", "норм чел", "влагалище", "уебанище", "пидорасина", "не сдох", "сдох"];
+  const phrases = ['казел', 'казлина', 'говнюк', "пидарас", "тварь", "дерьмоед", "уебан", "тупень", "эммм", "влагалище", "уебанище", "пидорасина", "не сдох к сожалению", "сдох"];
   const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
   const heading = document.querySelector('h1');
   heading.innerHTML = `Венде сегодня ${randomPhrase}`;
